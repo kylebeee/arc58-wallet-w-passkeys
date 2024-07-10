@@ -39,11 +39,18 @@ const blendColors = (color1: { red: number, green: number, blue: number }, color
 
 const DotGrid: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const sizing = useWindowSize();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    if (canvas.width !== window.innerWidth + 80) {
+      canvas.width = window.innerWidth + 80;
+    }
+
+    if (canvas.height !== window.innerHeight + 80) {
+      canvas.height = window.innerHeight + 80;
+    }
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -97,9 +104,7 @@ const DotGrid: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      width={sizing.width}
-      height={sizing.height}
-      className='absolute inset-0 z-[11]'
+      className='absolute -top-10 -left-10 z-[11]'
     ></canvas>
   );
 };

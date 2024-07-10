@@ -1,5 +1,3 @@
-'use client'
-
 import Toggle from '@/components/toggle'
 import DotGrid from '@/components/dot-grid'
 
