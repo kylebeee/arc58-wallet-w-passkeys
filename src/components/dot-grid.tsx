@@ -1,5 +1,6 @@
 'use client'
 
+import { useWindowSize } from '@/hooks/window-size';
 import React, { useRef, useEffect } from 'react';
 
 const colors = [
@@ -38,6 +39,7 @@ const blendColors = (color1: { red: number, green: number, blue: number }, color
 
 const DotGrid: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const sizing = useWindowSize();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -95,9 +97,9 @@ const DotGrid: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      width={typeof window !== 'undefined' ? window.innerWidth * 1.1 : 1080 * 1.1}
-      height={typeof window !== 'undefined' ? window.innerHeight * 1.1 : 1920 * 1.1}
-      style={{ position: 'absolute', top: -50, left: -50, zIndex: 11 }}
+      width={sizing.width}
+      height={sizing.height}
+      className='absolute inset-0 z-[11]'
     ></canvas>
   );
 };

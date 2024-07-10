@@ -5,12 +5,12 @@ import DotGrid from '@/components/dot-grid'
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-br from-black to-akita-600/20 md:h-full md:overflow-hidden">
+    <div className="bg-gradient-to-br from-black to-akita-600/20 md:h-full overflow-hidden">
       <header className="absolute inset-x-0 top-0 z-50">
         <div className="mx-auto">
           <div className="px-6 pt-6 lg:max-w-2xl lg:pl-8 lg:pr-0">
             <nav aria-label="Global" className="flex items-center justify-between lg:justify-start">
-              <a href="/test" className="-m-1.5 p-1.5">
+              <a href="/test" className="-m-1.5 p-1.5 bg-zinc-900 rounded-lg">
                 <span className="sr-only">Akita</span>
                 <img
                   alt="Akita"
@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="isolate relative h-full">
+      <div className="isolate relative h-full w-full">
         <div className="z-50 relative px-6 pt-24 md:py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
           <div className="z-50 mx-auto max-w-2xl lg:mx-0">
             <div className="hidden sm:mb-6 sm:flex">
@@ -57,7 +57,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div className="bg-black lg:absolute lg:inset-y-0 lg:right-0 h-[200%] lg:w-1/2"></div> */}
         <DotGrid />
       </div>
     </div>
