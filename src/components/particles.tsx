@@ -90,8 +90,8 @@ const Particles: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      width={window.innerWidth}
-      height={window.innerHeight}
+      width={typeof window !== 'undefined' ? window.innerWidth : 1080}
+      height={typeof window !== 'undefined' ? window.innerHeight : 1920}
       style={{ position: 'absolute', top: 0, left: 0 }}
     ></canvas>
   );
