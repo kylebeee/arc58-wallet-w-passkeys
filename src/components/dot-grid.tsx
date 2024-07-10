@@ -95,8 +95,8 @@ const DotGrid: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      width={window.innerWidth * 1.1}
-      height={window.innerHeight * 1.1}
+      width={typeof window !== 'undefined' ? window.innerWidth * 1.1 : 1080 * 1.1}
+      height={typeof window !== 'undefined' ? window.innerHeight * 1.1 : 1920 * 1.1}
       style={{ position: 'absolute', top: -50, left: -50, zIndex: 11 }}
     ></canvas>
   );
