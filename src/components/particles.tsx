@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef, useEffect } from 'react';
 
 const purple = 'rgba(36, 19, 121,';
